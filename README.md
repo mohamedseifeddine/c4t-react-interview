@@ -31,6 +31,7 @@
 - Utiliser les hooks React
 - Utiliser les contexts
 - Utiliser toutes les librairies de votre choix afin de mettre en place ces consignes
+- Utiliser Tailwind pour le design
 
 **L'utilisation de TypeScript est un plus.**
 
