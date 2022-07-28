@@ -28,6 +28,7 @@
     - Le composant de carte du film
 
 ### Conditions
+- Utiliser NextJS
 - Utiliser les hooks React
 - Utiliser les contexts
 - Utiliser toutes les librairies de votre choix afin de mettre en place ces consignes
