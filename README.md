@@ -9,8 +9,8 @@
 2. Ajouter un bouton dans les cartes permettant de supprimer celles-ci
 
 3. Ajouter un système de like / dislike
-    - Afficher un bouton toggle like / dislike
-    - Afficher le nombre de like / dislike
+    - Afficher un bouton toggle like et dislike
+    - Afficher le nombre de like et dislike
 
 4. Ajouter un filtre **multi-select** par catégorie
     - Les catégories doivent être récupérées dynamiquement
@@ -27,14 +27,20 @@
     - La fonction de recherche
     - Le composant de carte du film
 
+8. Créer les tests e2e :
+    - Tester la navigation
+    - Tester la recherche
+    - Tester le filtrage des catégories
+
 ### Conditions
 - Utiliser NextJS
 - Utiliser les hooks React
-- Utiliser les contexts
+- Utiliser les contexts ou RecoilJS ou Zustand
 - Utiliser toutes les librairies de votre choix afin de mettre en place ces consignes
 - Utiliser Tailwind pour le design
+- Utiliser Cypress et Jest pour les tests
 
-**L'utilisation de TypeScript est un plus.**
+**Utiliser TypeScript**
 
 ### Important
-/!\ La suppression du comportement asynchrone dans `movies.js` entraînera une annulation du test.
+/!\ La suppression du comportement asynchrone dans `movies.js` entraînera l'annulation du test.
