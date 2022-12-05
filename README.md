@@ -13,6 +13,7 @@
     - Afficher le nombre de like et dislike
 
 4. Ajouter un filtre **multi-select** par catégorie
+    - Ce filtre permet de sélectionner plusieurs catégories à afficher
     - Les catégories doivent être récupérées dynamiquement
     - Si tous les films d'une catégorie sont supprimés, celle-ci ne doit plus apparaître
 
@@ -21,24 +22,28 @@
     - Boutons précédent/suivant
 
 6. Ajouter un champ de recherche par titre de film contraint par la/les catégorie(s) sélectionnée(s)
+    - Utilisez React Hook Form pour faire fonctionner le champ de recherche
 
 7. Ajouter des tests unitaires et tester :
     - La fonction de filtrage
     - La fonction de recherche
+    - Le système like / dislike
     - Le composant de carte du film
 
 8. Créer les tests e2e :
-    - Tester la navigation
+    - Tester la pagination
     - Tester la recherche
     - Tester le filtrage des catégories
+    - Tester le système like / dislike
 
 ### Conditions
 - Utiliser NextJS
 - Utiliser les hooks React
+- Utiliser React Hook Form
 - Utiliser les contexts ou RecoilJS ou Zustand
-- Utiliser toutes les librairies de votre choix afin de mettre en place ces consignes
 - Utiliser Tailwind pour le design
 - Utiliser Cypress et Jest pour les tests
+- Utiliser toutes les librairies de votre choix afin de mettre en place ces consignes
 
 **Utiliser TypeScript**
 
