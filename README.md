@@ -37,6 +37,7 @@
     - Tester le système like / dislike
 
 ### Conditions
+- **Utiliser TypeScript**
 - Utiliser NextJS
 - Utiliser les hooks React
 - Utiliser React Hook Form
@@ -44,8 +45,6 @@
 - Utiliser Tailwind pour le design
 - Utiliser Cypress et Jest pour les tests
 - Utiliser toutes les librairies de votre choix afin de mettre en place ces consignes
-
-**Utiliser TypeScript**
 
 ### Les plus (optionnel)
 - Utilisation d'ESLint
