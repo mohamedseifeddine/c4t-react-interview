@@ -1,6 +1,6 @@
 # Coding 4 Tomorrow React Interview
 
-## Instructions
+## ☑️ Instructions
 1. Lister les films dans des cartes côte à côte (responsive) et afficher :
     - l'image de l'affiche
     - le titre en gras
@@ -36,7 +36,7 @@
     - Tester le filtrage des catégories
     - Tester le système like / dislike
 
-### Conditions
+### ✅ Conditions
 - **Utiliser TypeScript**
 - Utiliser NextJS
 - Utiliser les hooks React
@@ -46,10 +46,11 @@
 - Utiliser Cypress et Jest pour les tests
 - Utiliser toutes les librairies de votre choix afin de mettre en place ces consignes
 
-### Les plus (optionnel)
+### 🚀 Les plus (optionnel)
 - Utilisation d'ESLint
 - Utilisation de Prettier
 - Utilisation de Storybook
 
-### Important
-/!\ La suppression du comportement asynchrone dans `movies.js` entraînera l'annulation du test.
+### ⚠️ Important
+- La suppression du comportement asynchrone dans `movies.js` entraînera l'annulation du test.
+- **Une attention toute particulière sera portée à la structure du code et du projet.**
