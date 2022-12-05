@@ -47,6 +47,7 @@
 - Utiliser toutes les librairies de votre choix afin de mettre en place ces consignes
 
 ### 🚀 Les plus (optionnel)
+- Gestion du loading et réflexion sur la stratégie d'affichage (Skeleton ? Juste un loader ? Quelle partie de la page ? etc...)
 - Utilisation d'ESLint
 - Utilisation de Prettier
 - Utilisation de Storybook
