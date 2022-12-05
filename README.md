@@ -47,5 +47,10 @@
 
 **Utiliser TypeScript**
 
+### Les plus (optionnel)
+- Utilisation d'ESLint
+- Utilisation de Prettier
+- Utilisation de Storybook
+
 ### Important
 /!\ La suppression du comportement asynchrone dans `movies.js` entraînera l'annulation du test.
