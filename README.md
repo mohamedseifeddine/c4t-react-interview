@@ -12,8 +12,9 @@
     - Afficher un bouton toggle like et dislike
     - Afficher le nombre de like et dislike
 
-4. Ajouter un filtre **multi-select** par catégorie
-    - Ce filtre permet de sélectionner plusieurs catégories à afficher
+4. Ajouter un filtre par catégorie
+    - Utiliser React Hook Form
+    - Ce filtre permet de sélectionner une catégories à afficher
     - Les catégories doivent être récupérées dynamiquement
     - Si tous les films d'une catégorie sont supprimés, celle-ci ne doit plus apparaître
 
@@ -31,10 +32,12 @@
     - Le composant de carte du film
 
 8. Créer les tests e2e :
-    - Tester la pagination
-    - Tester la recherche
-    - Tester le filtrage des catégories
-    - Tester le système like / dislike
+    - Si on filtre par catégorie puis que l'on recherche par mot clés, on ne doit chercher que dans la catégorie en cours
+    - Si on fait une recherche puis que l'on filtre par catégorie, on ne doit filtrer que dans la recherche en cours
+    - Si nous sommes sur la page 2 et que l'on filtre par catégorie, s'il n'y a qu'une seule page de résultats, on doit se retrouver sur la page 1
+    - Si on filtre par films d'animation et que l'on supprime le seul film de la catégorie, on doit se retrouver sur la catégorie "Tous les films" et afficher les films correspondants
+    - Si on like un film puis que l'on change de catégorie (le film disparaît), quand on retourne dans la catégorie du film liké, notre like doit toujours apparaître sur la fiche.
+    - Si on supprime le dernier film d'une catégorie, la catégorie doit disparaître
 
 ### ✅ Conditions
 - **Utiliser TypeScript**
@@ -45,13 +48,9 @@
 - Utiliser Tailwind pour le design
 - Utiliser Cypress et Jest pour les tests
 - Utiliser toutes les librairies de votre choix afin de mettre en place ces consignes
-
-### 🚀 Les plus (optionnel)
-- Gestion du loading et réflexion sur la stratégie d'affichage (Skeleton ? Juste un loader ? Quelle partie de la page ? etc...)
-- Utilisation d'ESLint
-- Utilisation de Prettier
-- Utilisation de Storybook
+- Doit démontrer le Single Source of Truth principle
+- Doit démontrer le DRY principle
 
 ### ⚠️ Important
 - La suppression du comportement asynchrone dans `movies.js` entraînera l'annulation du test.
-- **Une attention toute particulière sera portée à la structure du code et du projet.**
+- **Une attention toute particulière sera portée à la structure du code et du projet, imaginez que vous travaillez en équipe.**
