@@ -66,7 +66,7 @@
 
 ## Core
 
-- ✅ Next 13 (app directory)
+- ✅ Next 13
 - ✅ React 18
 - ✅ Typescript 4
 
