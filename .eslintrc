@@ -1,0 +1,136 @@
+{
+  "plugins": [
+    "@typescript-eslint",
+    "simple-import-sort",
+    "unused-imports",
+    "testing-library"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "next",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es2021": true,
+    "node": true
+  },
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ],
+    // TEMPORARY
+    "@typescript-eslint/no-explicit-any": "warn", // FIXME: type everything.
+    "no-console": "warn", // should be error
+    // END OF TEMPORARY
+
+    //#region  //*=========== Unused Import ===========
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    //#endregion  //*======== Unused Import ===========
+
+    //#region  //*=========== Import Sort ===========
+    "simple-import-sort/exports": "warn",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          // Side effect imports.
+          // Packages.
+          // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+          ["^\\u0000", "^@?\\w"],
+          // Node.js builtins prefixed with `node:`.
+          ["^node:"],
+          // root imports
+          ["^~/"],
+          // Types
+          ["^~/types"],
+          // Absolute imports and other imports such as Vue-style `@/foo`.
+          // Anything not matched in another group.
+          ["^~/components", "^@@/", "^@/", "#/"],
+          // Relative imports.
+          // Anything that starts with a dot.
+          ["^\\."],
+          // Other imports
+          ["^"]
+        ]
+      }
+    ],
+    //#endregion  //*======== Import Sort ===========
+
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react/jsx-curly-brace-presence": [
+      "warn",
+      { "props": "never", "children": "never" }
+    ],
+
+    "jsx-a11y/anchor-is-valid": "off",
+
+    "eol-last": ["error", "always"], // always end file with a newline
+    "no-underscore-dangle": "off", // for backward compatibility with our previous code
+    "no-restricted-globals": "off", // weird behaviour with legit names
+    "no-multiple-empty-lines": [
+      // prevents more than 1 empty line successively
+      2,
+      {
+        "max": 1
+      }
+    ],
+    "linebreak-style": ["error", "unix"], // prevents windows linebreaks
+    "import/prefer-default-export": "off" // we don't want to force default exports
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "extensions": [".js", ".jsx", ".tsx"],
+        "map": [
+          ["~", "./src"],
+          ["#", "./public/images"],
+          ["@", "./src/components/app"],
+          ["@@", "./src/components/common"]
+        ]
+      }
+    }
+  }
+}

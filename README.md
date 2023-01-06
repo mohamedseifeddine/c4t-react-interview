@@ -1,56 +1,139 @@
-# Coding 4 Tomorrow React Interview
+# C4T NextJS Interview
+
+# How to complete the test
 
 ## ☑️ Instructions
-1. Lister les films dans des cartes côte à côte (responsive) et afficher :
-    - l'image de l'affiche
-    - le titre en gras
-    - la catégorie
-  
-2. Ajouter un bouton dans les cartes permettant de supprimer celles-ci
 
-3. Ajouter un système de like / dislike
-    - Afficher un bouton toggle like et dislike
-    - Afficher le nombre de like et dislike
+1. Display the movies in cards side by side (responsive) and show:
 
-4. Ajouter un filtre par catégorie
-    - Utiliser React Hook Form
-    - Ce filtre permet de sélectionner une catégories à afficher
-    - Les catégories doivent être récupérées dynamiquement
-    - Si tous les films d'une catégorie sont supprimés, celle-ci ne doit plus apparaître
+   - Poster image
+   - Title
+   - Category
 
-5. Ajouter un système de pagination
-    - Afficher 6 films par page
-    - Boutons précédent/suivant
+2. Add a button in each card to delete it
 
-6. Ajouter un champ de recherche par titre de film contraint par la/les catégorie(s) sélectionnée(s)
-    - Utilisez React Hook Form pour faire fonctionner le champ de recherche
+3. Add a like/dislike feature to each card
 
-7. Ajouter des tests unitaires et tester :
-    - La fonction de filtrage
-    - La fonction de recherche
-    - Le système like / dislike
-    - Le composant de carte du film
+   - Display a toggle button for like and dislike
+   - Display the number of likes and dislikes
 
-8. Créer les tests e2e :
-    - Si on filtre par catégorie puis que l'on recherche par mot clés, on ne doit chercher que dans la catégorie en cours
-    - Si on fait une recherche puis que l'on filtre par catégorie, on ne doit filtrer que dans la recherche en cours
-    - Si nous sommes sur la page 2 et que l'on filtre par catégorie, s'il n'y a qu'une seule page de résultats, on doit se retrouver sur la page 1
-    - Si on filtre par films d'animation et que l'on supprime le seul film de la catégorie, on doit se retrouver sur la catégorie "Tous les films" et afficher les films correspondants
-    - Si on like un film puis que l'on change de catégorie (le film disparaît), quand on retourne dans la catégorie du film liké, notre like doit toujours apparaître sur la fiche.
-    - Si on supprime le dernier film d'une catégorie, la catégorie doit disparaître
+4. Add a category filter
+
+   - Use React Hook Form
+   - This filter allows you to select a category to display
+   - The categories must be retrieved dynamically from the movies list
+   - If all the movies of a category are deleted, it should no longer appear
+
+5. Add a pagination to the movies list
+
+   - Display 6 movies per page
+   - Add a previous & next button
+
+6. Add a search field by movie title constrained by the selected category
+
+   - Use React Hook Form to make the search field work
+
+7. Add unit tests and test:
+
+   - The filtering function
+   - The search function
+   - The like / dislike feature
+   - The movie card component
+
+8. Create e2e tests:
+   - If we filter by category then search by keywords, we should only search in the selected category
+   - If we search then filter by category, we should only filter in the search results
+   - If we are on page 2 and we filter by category and there is only one page of results, we should be on page 1
+   - If we like a movie then change category, the movie disappears, when we go back to the category of the liked movie, our like should still be displayed on the card
+   - If we delete the last movie of a category, the category should disappear from the filters and be back to "All movies" category
 
 ### ✅ Conditions
-- **Utiliser TypeScript**
-- Utiliser NextJS
-- Utiliser les hooks React
-- Utiliser React Hook Form
-- Utiliser les contexts ou RecoilJS ou Zustand
-- Utiliser Tailwind pour le design
-- Utiliser Cypress et Jest pour les tests
-- Utiliser toutes les librairies de votre choix afin de mettre en place ces consignes
-- Doit démontrer le Single Source of Truth principle
-- Doit démontrer le DRY principle
 
-### ⚠️ Important
-- La suppression du comportement asynchrone dans `movies.js` entraînera l'annulation du test.
-- **Une attention toute particulière sera portée à la structure du code et du projet, imaginez que vous travaillez en équipe.**
+- **Use TypeScript and type everything**
+- **Use all the libraries that are provided in the project**
+- **You can add any library you want to complete the test**
+- Use Tailwind for the design
+- Use Cypress and Jest for the tests (already provided and configured)
+- You can add RecoilJS or Zustand or any other state management library you want
+- **⚠️ Your code should demonstrate:**
+  - Single Source of Truth principle
+  - DRY principle
+  - KISS principle
+  - SOLID principle
+- **⚠️ We will carefully assess how you structured your code and the project, imagine you're working within a team. Demonstrate how rigorous you are.**
+
+# Project Dependencies
+
+## Core
+
+- ✅ Next 13 (app directory)
+- ✅ React 18
+- ✅ Typescript 4
+
+## UI
+
+- ✅ TailwindCSS 3
+
+## Testing
+
+- ✅ Jest
+- ✅ Cypress
+- ✅ MSW
+
+## Linting
+
+- ✅ ESLint
+- ✅ Prettier
+- ✅ Stylelint
+- ✅ Lint-staged
+- ✅ Husky
+- ✅ Commitlint
+- ✅ Commitizen
+- ✅ Conventional Commits
+
+# Getting started
+
+## Installation
+
+```bash
+$ yarn && yarn dev
+```
+
+---
+
+## MSW
+
+This project uses MSW to mock the API calls and will intercept requests made so you don't need to host any API locally.
+
+You can get more information about MSW here: https://mswjs.io/
+
+Use this URL to fetch the movies: `/movies`
+
+---
+
+## E2E tests
+
+Create your e2e tests using Cypress to test the app from the user perspective.
+
+Write tests for each feature you add.
+
+See `./cypress/e2e` for the tests.
+
+Run `yarn test:e2e:headless` to run the e2e tests.
+
+---
+
+## Unit tests
+
+Create your unit tests in a **tests** folder alongside the component you want to test.
+
+See `./src/pages/__tests__/index.test.tsx` for an example.
+
+Run `yarn test` to run the unit tests.
+
+---
+
+## Committing
+
+This project uses commitizen to generate commit messages.
+Please, use `yarn cz` and follow the instructions to commit your changes.
