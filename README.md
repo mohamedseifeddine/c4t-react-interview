@@ -62,6 +62,8 @@
   - SOLID principle
 - **⚠️ We will carefully assess how you structured your code and the project, imagine you're working within a team. Demonstrate how rigorous you are.**
 
+**Good luck!** 💪
+
 # Project Dependencies
 
 ## Core
@@ -137,5 +139,3 @@ Run `yarn test` to run the unit tests.
 
 This project uses commitizen to generate commit messages.
 Please, use `yarn cz` and follow the instructions to commit your changes.
-
-**Good luck!** 💪
