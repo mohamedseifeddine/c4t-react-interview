@@ -43,7 +43,7 @@
 8. Create e2e tests:
    - If we filter by category then search by keywords, we should only search in the selected category
    - If we search then filter by category, we should only filter in the search results
-   - If we are on page 2 and we filter by category and there is only one page of results, we should be on page 1
+   - If we are on page 2 and we filter by category and there is only one page of results, we should be on page 1
    - If we like a movie then change category, the movie disappears, when we go back to the category of the liked movie, our like should still be displayed on the card
    - If we delete the last movie of a category, the category should disappear from the filters and be back to "All movies" category
 
@@ -137,3 +137,5 @@ Run `yarn test` to run the unit tests.
 
 This project uses commitizen to generate commit messages.
 Please, use `yarn cz` and follow the instructions to commit your changes.
+
+**Good luck!** 💪
