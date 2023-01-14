@@ -1,8 +1,13 @@
-/* Replace with your design */
+import Pagination from '~/components/Pagination'
+import SearchBar from '~/components/SearchBar'
+
+import MovieList from '../components/MoviList'
+
 const Home = () => (
-  <div className="container m-auto flex flex-col gap-4 py-4 text-center">
-    <h1 className="text-2xl">Welcome to the C4T NextJS Interview test</h1>
-    <p>Use this route to fetch the movies: GET /movies</p>
+  <div className="min-h-screen bg-gray-100 py-6 flex flex-row flex-wrap justify-center sm:py-8">
+    <SearchBar />
+    <MovieList />
+    <Pagination />
   </div>
 )
 
