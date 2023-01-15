@@ -13,3 +13,7 @@ export interface Movie {
   likes: number
   dislikes: number
 }
+
+export interface MovieContextType {
+  movies: Array<Movie>
+}

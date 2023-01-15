@@ -1,14 +1,17 @@
+import MovieProvider from '~/context/UseMovie'
+
+import MovieList from '~/components/MoviList'
 import Pagination from '~/components/Pagination'
 import SearchBar from '~/components/SearchBar'
 
-import MovieList from '../components/MoviList'
-
 const Home = () => (
-  <div className="min-h-screen bg-gray-100 py-6 flex flex-row flex-wrap justify-center sm:py-8">
-    <SearchBar />
-    <MovieList />
-    <Pagination />
-  </div>
+  <MovieProvider>
+    <div className="flex min-h-screen  flex-col space-y-4 bg-gray-100 p-10">
+      <SearchBar />
+      <MovieList />
+      <Pagination />
+    </div>
+  </MovieProvider>
 )
 
 export default Home

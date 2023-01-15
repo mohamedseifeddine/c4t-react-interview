@@ -1,37 +1,58 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
-import MovieCardFooter from "../MovieCardFooter";
+import { Movie } from '~/types/Movie'
 
-const MovieCard = () => (
+import MovieCardFooter from '../MovieCardFooter'
 
-    <div className="py-3 sm:max-w-xl sm:mx-auto">
-        <div className="bg-white shadow-lg border-gray-100 border sm:rounded-3xl p-8 flex space-x-8">
-            <div className="h-60 overflow-visible w-5/12">
-                <img className="rounded-2xl shadow-lg h-60 w-80" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1LRLLWGvs5sZdTzuMqLEahb88Pc.jpg" alt="" />
-                <div className="flex flex-row mt-3 ml-1 text-lg text-gray-800 rounded-2xl ">
-                    <div className="flex  flex-row">
-                        <p className="mt-1 text-1xl text-black-400">1000</p>
-                        <img className="ml-1  rounded-2xl " src="/icons/like.svg" alt="" />
-                    </div>
-                    <div className="flex flex-row">
-                        <p className="text-1xl ml-8 mt-1 text-black-400">400</p>
-                        <img className="ml-1 mt-1.5 rounded-2xl" src="/icons/dislike.svg" alt="" />
-                    </div>
-
-                </div>
+const MovieCard = ({ movie }: { movie: Movie }) => {
+  const { title, category, poster, likes, dislikes } = movie
+  return (
+    <div className="h-80 w-4/12 py-2 sm:mx-auto sm:max-w-xl">
+      <div className="ml-2 flex  space-x-8 border border-gray-100 bg-white p-3 shadow-lg sm:rounded-3xl">
+        <div className="h-60 w-5/12 overflow-visible">
+          <Image
+            width={100}
+            height={70}
+            className="h-40 w-40 rounded-2xl shadow-lg"
+            src={poster}
+            alt={title}
+          />
+          <div className="mt-3 ml-1 flex flex-row rounded-2xl text-lg text-gray-800 ">
+            <div className="flex  flex-row">
+              <p className="text-1xl text-black-400 mt-1">{likes}</p>
+              <Image
+                width={20}
+                height={20}
+                className="ml-1  rounded-2xl "
+                src="/icons/like.svg"
+                alt={title}
+              />
             </div>
-            <div className="flex flex-col w-7/12 ">
-                <div className="flex flex-col h-60 justify-between items-start space-y-6">
-                    <h2 className="text-3xl font-bold">First Movie</h2>
-                    <p className="rounded-2xl bg-yellow-300 center w-20 p-2 text-center">Action</p>
-                    <p className=" text-gray-400 max-h-40 overflow-y-hidden">Lorem ipsum d sed do eiusmod tempor incididunt ut labore et dolore magna aliqua eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <MovieCardFooter />
+            <div className="flex flex-row">
+              <p className="text-1xl text-black-400 ml-8 mt-1">{dislikes}</p>
+              <Image
+                width={20}
+                height={18}
+                className="ml-1 mt-1.5 rounded-2xl"
+                src="/icons/dislike.svg"
+                alt=""
+              />
             </div>
+          </div>
         </div>
+        <div className="flex w-7/12 flex-col ">
+          <div className="flex h-40 flex-col items-start justify-between space-y-6">
+            <h2 className="text-3xl font-bold">{title}</h2>
+            <p className="center w-40 rounded-2xl bg-yellow-300 p-2 text-center">
+              {category}
+            </p>
+          </div>
+          <MovieCardFooter />
+        </div>
+      </div>
     </div>
+  )
+}
 
-);
-
-export default MovieCard;
+export default MovieCard

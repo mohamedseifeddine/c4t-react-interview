@@ -7,15 +7,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "commit": "cz",
+    "pre-commit":"lint-staged",
     "postinstall": "husky install",
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --ci",
-    "test:e2e": "start-server-and-test \"yarn dev -p 3010\" http://localhost:3010 cypress",
-    "test:e2e:headless": "start-server-and-test \"yarn dev -p 3010\" http://localhost:3010 cypress:headless",
-    "test:e2e:headless:ci": "start-server-and-test \"yarn dev -p 3010\" http://localhost:3010 cypress:headless"
+    "test:e2e": "start-server-and-test \"npm run dev -p 3010\" http://localhost:3010 cypress",
+    "test:e2e:headless": "start-server-and-test \"npm run dev -p 3010\" http://localhost:3010 cypress:headless",
+    "test:e2e:headless:ci": "start-server-and-test \"npm run dev -p 3010\" http://localhost:3010 cypress:headless"
   },
   "config": {
     "commitizen": {
@@ -27,6 +29,7 @@
     "@heroicons/react": "^2.0.13",
     "@hookform/resolvers": "^2.9.10",
     "@next/font": "^13.0.5",
+    "axios": "^1.2.2",
     "classnames": "^2.3.2",
     "next": "^13.1.1",
     "react": "^18.2.0",
