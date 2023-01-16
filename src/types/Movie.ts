@@ -16,5 +16,7 @@ export interface Movie {
 
 export interface MovieContextType {
   movies: Array<Movie>
+  likeMovie: (id: number) => void
+  dislikeMovie: (id: number) => void
   deleteMovie: (id: number) => void
 }
