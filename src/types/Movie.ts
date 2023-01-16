@@ -16,4 +16,5 @@ export interface Movie {
 
 export interface MovieContextType {
   movies: Array<Movie>
+  deleteMovie: (id: number) => void
 }

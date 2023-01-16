@@ -6,7 +6,7 @@ import { Movie } from '~/types/Movie'
 import MovieCardFooter from '../MovieCardFooter'
 
 const MovieCard = ({ movie }: { movie: Movie }) => {
-  const { title, category, poster, likes, dislikes } = movie
+  const { id, title, category, poster, likes, dislikes } = movie
   return (
     <div className="h-80 w-4/12 py-2 sm:mx-auto sm:max-w-xl">
       <div className="ml-2 flex  space-x-8 border border-gray-100 bg-white p-3 shadow-lg sm:rounded-3xl">
@@ -48,7 +48,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
               {category}
             </p>
           </div>
-          <MovieCardFooter />
+          <MovieCardFooter id={id} />
         </div>
       </div>
     </div>

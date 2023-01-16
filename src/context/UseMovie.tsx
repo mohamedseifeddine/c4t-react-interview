@@ -13,10 +13,16 @@ const MovieProvider = ({ children }: { children: ReactElement }) => {
     getMovieList().then((res) => setMovies(res))
   }, [])
 
+  const deleteMovie = (id: number) => {
+    const filtredMovies = movies.filter((movie: Movie) => movie.id !== id)
+    setMovies(filtredMovies)
+  }
+
   return (
     <MovieContext.Provider
       value={{
         movies,
+        deleteMovie,
       }}
     >
       {children}

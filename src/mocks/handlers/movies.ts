@@ -81,6 +81,17 @@ const handlers = [
   rest.get('/movies', (_req, res, ctx) =>
     res(ctx.delay(800), ctx.json<Movie[]>(movies)),
   ),
+  rest.delete('/movies/:id', (req, res, ctx) => {
+    const id = req.url.searchParams.get('id')
+    const filtredMovies = movies.filter(
+      (movie: Movie) => movie.id !== Number(id),
+    )
+    return res(
+      ctx.json({
+        filtredMovies,
+      }),
+    )
+  }),
 ]
 
 export default handlers
